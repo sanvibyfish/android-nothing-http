@@ -1,4 +1,4 @@
-package io.nothing.sample;
+package io.nothing.samples;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
