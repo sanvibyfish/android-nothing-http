@@ -23,18 +23,14 @@ public class NothingRestClient {
 
   private static String TAG = NothingRestClient.class.getSimpleName();
 
-  private static String baseURL = "";
-
   private static AsyncHttpClient client = new AsyncHttpClient();
   private NothingHttpResponseHandler handler;
 
-  public NothingRestClient(String baseURL) {
-    this.baseURL = baseURL;
+  public NothingRestClient() {
     this.handler = new DefaultNothingResponseHandler();
   }
 
-  public NothingRestClient(String baseURL, NothingHttpResponseHandler handler) {
-    this.baseURL = baseURL;
+  public NothingRestClient(NothingHttpResponseHandler handler) {
     this.handler = handler;
   }
 

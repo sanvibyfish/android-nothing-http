@@ -22,4 +22,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':library')
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.jakewharton:butterknife:5.1.2'
 }
