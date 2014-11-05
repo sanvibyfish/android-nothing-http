@@ -1,6 +1,8 @@
 package io.nothing.http;
 
-public class Task extends BaseTask {
+import java.io.Serializable;
+
+public class Task extends BaseTask implements Serializable{
 
 	private OnTaskRequestListener onTaskRequestListener;
 	

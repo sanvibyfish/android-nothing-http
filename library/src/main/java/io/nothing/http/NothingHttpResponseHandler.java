@@ -13,5 +13,5 @@ public interface NothingHttpResponseHandler {
     public String onSuccess(int statusCode, Header[] headers, String responseString);
     public Throwable onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable);
     public Throwable onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse);
-    public Throwable onFailure(int statusCode, Header[] headers, Throwable e,JSONObject errorResponse);
+    public Throwable onFailure(int statusCode, Header[] headers, Throwable e, JSONObject errorResponse);
 }

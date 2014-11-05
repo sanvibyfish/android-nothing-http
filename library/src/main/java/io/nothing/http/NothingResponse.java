@@ -11,8 +11,6 @@ import java.util.List;
 
 public abstract class NothingResponse<T extends Result> {
 
-    private List<T> result = new ArrayList<T>();
-
     public void transfer(JSONArray jsonArray) throws Exception {
         onSuccess((List<T>) getActualClass().transfer(jsonArray));
     }
@@ -26,7 +24,7 @@ public abstract class NothingResponse<T extends Result> {
         Result cls = null;
         try {
             String clsName = getType().toString().replace("class ", "").trim();
-            cls = (io.nothing.http.Result) Class.forName(clsName).newInstance();
+            cls = (Result) Class.forName(clsName).newInstance();
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -44,13 +42,21 @@ public abstract class NothingResponse<T extends Result> {
         onSuccess(responseString);
     }
 
-    public abstract void onSuccess(List<T> response);
+    public void onSuccess(List<T> response){
 
-    public abstract void onSuccess(T response);
+    }
 
-    public abstract void onSuccess(String responseString);
+    public void onSuccess(T response) throws NoSuchFieldException, IllegalAccessException {
 
-    public abstract void onFailure(int statusCode, Throwable e,
-                                   JSONObject errorResponse);
+    }
+
+    public void onSuccess(String responseString){
+
+    }
+
+    public void onFailure(int statusCode, Throwable e,
+                                   JSONObject errorResponse){
+      e.printStackTrace();
+    }
 
 }
