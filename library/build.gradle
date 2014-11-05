@@ -1,5 +1,21 @@
-apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'signing'
 
+version = "0.1.1"
+group = "io.github.sanvibyfish"
+
+configurations {
+    archives {
+        extendsFrom configurations.default
+    }
+}
+
+signing {
+    required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+apply plugin: "com.android.library"
 android {
     compileSdkVersion 20
     buildToolsVersion "20.0.0"
@@ -22,4 +38,48 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.loopj.android:android-async-http:1.4.6'
+}
+
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories.mavenDeployer {
+        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+        repository(url: sonatypeRepo) {
+            authentication(userName: sonatypeUsername,
+                    password: sonatypePassword)
+        }
+
+        pom.project {
+            groupId 'io.nothing'
+            artifactId 'android-nothing-http'
+            name 'Android Network Library'
+            packaging 'aar'
+            description 'Android Network library for Android applications'
+            url 'https://github.com/sanvibyfish/android-nothing-http'
+
+            scm {
+                url 'scm:git@github.com:sanvibyfish/android-nothing-http.git'
+                connection 'scm:git@github.com:sanvibyfish/android-nothing-http.git'
+                developerConnection 'scm:git@github.com:sanvibyfish/android-nothing-http.git'
+            }
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+
+            developers {
+                developer {
+                    id 'sanvi'
+                    name 'Sanvi Lu'
+                    email 'sanvibyfish@gmail.com'
+                }
+            }
+        }
+    }
 }
