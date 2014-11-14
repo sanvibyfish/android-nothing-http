@@ -1,11 +1,10 @@
-package io.nothing.http;
+package io.nothing.android.http;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 

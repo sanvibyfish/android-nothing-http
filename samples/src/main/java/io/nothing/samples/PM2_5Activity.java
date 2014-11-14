@@ -10,8 +10,8 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import io.nothing.http.NothingResponse;
-import io.nothing.http.NothingRestClient;
+import io.nothing.android.http.NothingResponse;
+import io.nothing.android.http.NothingRestClient;
 import io.nothing.samples.adapter.PM2_5Adapter;
 import io.nothing.samples.model.PM2_5;
 

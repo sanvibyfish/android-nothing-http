@@ -1,4 +1,4 @@
-package io.nothing.http;
+package io.nothing.android.http;
 
 import org.apache.http.entity.StringEntity;
 import org.apache.http.message.BasicHeader;

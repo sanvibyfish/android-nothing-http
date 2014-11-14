@@ -1,4 +1,4 @@
-package io.nothing.http;
+package io.nothing.android.http;
 
 public class NothingStringParam implements NothingParam {
 	public String name;

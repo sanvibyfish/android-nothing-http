@@ -1,4 +1,4 @@
-package io.nothing.http;
+package io.nothing.android.http;
 
 import android.content.Context;
 import android.os.AsyncTask;

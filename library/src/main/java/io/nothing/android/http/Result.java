@@ -1,12 +1,10 @@
-package io.nothing.http;
+package io.nothing.android.http;
 
 
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import android.content.Context;
 
 
 /**

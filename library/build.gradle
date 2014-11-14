@@ -2,7 +2,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 version = "0.1.1"
-group = "io.github.sanvibyfish"
+group = "io.nothing.android"
 
 configurations {
     archives {
@@ -21,7 +21,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "io.nothing"
+        applicationId "io.nothing.android"
         minSdkVersion 15
         targetSdkVersion 15
         versionCode 1
@@ -52,10 +52,10 @@ uploadArchives {
         }
 
         pom.project {
-            groupId 'io.nothing'
-            artifactId 'android-nothing-http'
             name 'Android Network Library'
             packaging 'aar'
+            artifactId 'android-nothing-http'
+            groupId 'io.nothing.android'
             description 'Android Network library for Android applications'
             url 'https://github.com/sanvibyfish/android-nothing-http'
 

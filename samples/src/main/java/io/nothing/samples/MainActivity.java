@@ -10,8 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import io.nothing.http.Task;
-
 public class MainActivity extends Activity {
 
   String [] array = new String[]{"发送JSON","Post请求","get请求","上传图片"};

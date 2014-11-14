@@ -1,4 +1,4 @@
-package io.nothing.http;
+package io.nothing.android.http;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,7 +7,6 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.DataAsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
@@ -15,8 +14,6 @@ import org.apache.http.HttpEntity;
 import org.apache.http.entity.StringEntity;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.List;
 
 
 public class NothingRestClient {
